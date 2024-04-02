@@ -1,0 +1,19 @@
+AnomaloVersionID: 2
+AnomaloTables:
+{%- for table in tables -%}
+  {%- for table_name , details in table.items() %}
+  {% set configuration = details.configuration | default(defaults.get('configuration', {}), true) -%}
+  {{ table_name }}:
+    configuration:
+      always_alert_on_errors: {{ configuration.always_alert_on_errors | default(defaults.configuration.always_alert_on_errors) }}
+      check_cadence_run_at_duration: {{ configuration.check_cadence_run_at_duration | default( defaults.configuration.check_cadence_run_at_duration)}}
+      check_cadence_type: {{ configuration.check_cadence_type| default(defaults.configuration.check_cadence_type) }}
+      definition: {{ configuration.definition | default(defaults.configuration.definition) }}
+      fresh_after: {{ configuration.fresh_after | default(defaults.configuration.fresh_after) }}
+      interval_skip_expr: {{ configuration.interval_skip_expr | default(defaults.configuration.interval_skip_expr) }}
+      notification_channel_id: {{ configuration.notification_channel_id | default(defaults.configuration.notification_channel_id) }}
+      notify_after: {{ configuration.notify_after | default(defaults.configuration.notify_after) }}
+      time_column_type: {{ configuration.time_column_type | default(defaults.configuration.time_column_type) }}
+      time_columns: {{ configuration.time_columns | default(defaults.configuration.time_columns) }}
+    {%- endfor -%}
+{%- endfor -%}

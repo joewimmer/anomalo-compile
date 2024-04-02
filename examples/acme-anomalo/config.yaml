@@ -1,0 +1,15 @@
+---
+prod:
+  templates:
+    - basic.j2
+  vars:
+    - defaults.yaml
+    - prod/notifications.yaml
+    - prod/tables.yaml
+lab:
+  templates:
+    - basic.j2
+  vars:
+    - defaults.yaml
+    - lab/notifications.yaml
+    - lab/tables.yaml

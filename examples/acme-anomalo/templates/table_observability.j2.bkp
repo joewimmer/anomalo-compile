@@ -1,0 +1,19 @@
+AnomaloVersionID: 2
+AnomaloTables:
+{%- for warehouse in warehouses -%}
+  {% for table, details in warehouse %}
+  {{ warehouse }}.{{ table }}:
+  {% set configuration = details.configuration | default(defaults.get('configuration', {}), true) -%}
+    configuration:
+      always_alert_on_errors: false
+      check_cadence_run_at_duration: PT6H
+      check_cadence_type: daily
+      definition: '{{ configuration.definition | default(defaults.configuration.definition) | default('') }}'
+      fresh_after: null
+      interval_skip_expr: null
+      notification_channel_id: null
+      notify_after: null
+      time_column_type: null
+      time_columns: null
+  {% endfor -%}
+{% endfor -%}

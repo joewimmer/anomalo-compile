@@ -1,0 +1,5 @@
+---
+tables:
+  - joe-dbx.adp.check_run_output:
+      configuration:
+        definition: "Prod Customer data"

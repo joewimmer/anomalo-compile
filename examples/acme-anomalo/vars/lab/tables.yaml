@@ -1,0 +1,8 @@
+---
+tables:
+  - joe-dbx.adp.check_run_output:
+      configuration:
+        definition: "Customer data"
+  - joe-dbx.adp.fact_transactions_columnnevernull:
+      configuration:
+        definition: "Customer data"

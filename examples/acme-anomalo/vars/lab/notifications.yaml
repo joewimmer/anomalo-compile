@@ -1,0 +1,4 @@
+---
+defaults:
+  configuration:
+    notification_channel_id: 1

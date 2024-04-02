@@ -1,0 +1,12 @@
+defaults:
+  configuration:
+    check_cadence_type: "observability"
+    definition: "Managed by ACME team"
+    always_alert_on_errors: 'false'
+    check_cadence_run_at_duration: 'null'
+    fresh_after: 'null'
+    interval_skip_expr: 'null'
+    notification_channel_id: 'null'
+    notify_after: 'null'
+    time_column_type: 'null'
+    time_columns: 'null'
